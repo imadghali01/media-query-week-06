@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 .container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .container div{
     width: 100%;
@@ -31,7 +31,12 @@
 }
 @media (min-width: 768px){
     .container{
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1440px){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 }
 /*Let's do another one :
@@ -45,5 +50,11 @@
     In the inspector, play with the responsiveness.
     Look how small they get in a mobile size !!!!
     Let's stack them ! Use a media query to give the flex container a column direction on mobile and row direction on a bigger scree.
-    TIP : Even tough we can use max-width in the media query, the highly recommended worflow is mobile-first ! So declare your css for mobile and then with media query use min-width.*/
+    TIP : Even tough we can use max-width in the media query, the highly recommended worflow is mobile-first ! So declare your css for mobile and then with media query use min-width.
+    Looks great ? Let's change the code in order to use GRID now :
+
+    Instead of a display: flex , use now a display grid.
+    Give the template columns two 1fr
+    For tablet give three 1fr
+    For laptops give six 1fr (think of the function repeat)*/
 
